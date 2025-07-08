@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Trade Hub - Redirecting...</title>
+    <meta name="description" content="Garden Trade Hub - Plant & Garden Supply Trading Platform">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
+    <!-- GitHub Pages SPA redirect script -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // Start single page app for 404 errors
+      var pathToConvert = window.location.pathname;
+      var redirect = pathToConvert.split('/').slice(0, -1).join('/') + '/?/' + 
+        pathToConvert.slice(1).split('/').slice(1).join('/').replace(/&/g, '~and~') + 
+        (window.location.search || '') + window.location.hash;
+      
+      window.history.replaceState(null, null, redirect);
+    </script>
+</head>
+<body>
+    <div style="font-family: system-ui; text-align: center; padding: 2rem; color: #374151;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🌱</div>
+        <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Garden Trade Hub</h1>
+        <p style="color: #6B7280;">Redirecting you to the application...</p>
+        <div style="margin-top: 2rem;">
+            <div style="width: 24px; height: 24px; border: 3px solid #E5E7EB; border-top: 3px solid #10B981; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <script>
+        // Fallback redirect after 3 seconds
+        setTimeout(function() {
+            window.location.href = './';
+        }, 3000);
+    </script>
+</body>
+</html>

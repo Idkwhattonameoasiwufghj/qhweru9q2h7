@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Bright Roblox-inspired colors */
+  --background: hsl(120, 60%, 95%);
+  --foreground: hsl(210, 40%, 15%);
+  --muted: hsl(120, 15%, 92%);
+  --muted-foreground: hsl(210, 20%, 50%);
+  --popover: hsl(120, 30%, 98%);
+  --popover-foreground: hsl(210, 40%, 15%);
+  --card: hsl(120, 30%, 98%);
+  --card-foreground: hsl(210, 40%, 15%);
+  --border: hsl(120, 30%, 85%);
+  --input: hsl(120, 20%, 97%);
+  --primary: hsl(110, 80%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(280, 60%, 60%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 90%, 55%);
+  --accent-foreground: hsl(210, 40%, 15%);
+  --destructive: hsl(0, 80%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(110, 80%, 45%);
+  --radius: 1rem;
+  
+  /* Chart colors */
+  --chart-1: hsl(142, 76%, 36%);
+  --chart-2: hsl(346, 87%, 43%);
+  --chart-3: hsl(120, 100%, 25%);
+  --chart-4: hsl(60, 100%, 50%);
+  --chart-5: hsl(300, 100%, 50%);
+  
+  /* Sidebar colors */
+  --sidebar-background: hsl(0, 0%, 98%);
+  --sidebar-foreground: hsl(240, 5.3%, 26.1%);
+  --sidebar-primary: hsl(142, 76%, 36%);
+  --sidebar-primary-foreground: hsl(355.7, 100%, 97.3%);
+  --sidebar-accent: hsl(240, 4.8%, 95.9%);
+  --sidebar-accent-foreground: hsl(240, 5.9%, 10%);
+  --sidebar-border: hsl(220, 13%, 91%);
+  --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(142, 70%, 45%);
+  --primary-foreground: hsl(144, 61%, 20%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(142, 70%, 45%);
+  
+  /* Chart colors - dark mode */
+  --chart-1: hsl(142, 70%, 45%);
+  --chart-2: hsl(346, 87%, 43%);
+  --chart-3: hsl(120, 100%, 35%);
+  --chart-4: hsl(60, 100%, 60%);
+  --chart-5: hsl(300, 100%, 60%);
+  
+  /* Sidebar colors - dark mode */
+  --sidebar-background: hsl(240, 5.9%, 10%);
+  --sidebar-foreground: hsl(240, 4.8%, 95.9%);
+  --sidebar-primary: hsl(142, 70%, 45%);
+  --sidebar-primary-foreground: hsl(144, 61%, 20%);
+  --sidebar-accent: hsl(240, 3.7%, 15.9%);
+  --sidebar-accent-foreground: hsl(240, 4.8%, 95.9%);
+  --sidebar-border: hsl(240, 3.7%, 15.9%);
+  --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Fredoka', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Roblox-style animations and effects */
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(110, 231, 183, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(110, 231, 183, 0.6); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.roblox-card {
+  @apply rounded-2xl border-4 border-solid shadow-lg;
+  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+  border-color: hsl(var(--border));
+  transition: all 0.3s ease;
+}
+
+.roblox-card:hover {
+  @apply scale-105;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.roblox-button {
+  @apply rounded-xl font-bold text-lg px-6 py-3 shadow-lg border-2;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  border-color: hsl(var(--primary));
+  transition: all 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.roblox-button:hover {
+  animation: wiggle 0.6s ease-in-out;
+  transform: scale(1.05);
+}
+
+.roblox-button:active {
+  transform: scale(0.95);
+}
+
+.game-bg {
+  background: linear-gradient(135deg, 
+    hsl(120, 60%, 95%) 0%, 
+    hsl(180, 40%, 90%) 25%, 
+    hsl(200, 50%, 85%) 50%, 
+    hsl(120, 60%, 95%) 75%, 
+    hsl(120, 60%, 95%) 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+.animate-grow {
+  animation: bounce-in 0.3s ease-out;
+}
+
+/* Pulse animation for Discord status */
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth transitions for cards */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+}
+
+/* GitHub Pages SPA routing support */
+.spa-ready {
+  position: relative;
+}
+
+/* Loading state improvements */
+.skeleton-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus styles for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-600;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
